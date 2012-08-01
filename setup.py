@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 NAME = 'mezzanine-linkcollection'
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 
 DESCR = """\
 A fairly basic model for maintaining a link list on your site
@@ -23,6 +23,9 @@ setup(
     url=URL,
     license='BSD',
     packages=find_packages(),
+    package_data = {
+        'mezzalinkcollection': ['templates/*']
+    },
     include_package_data=True,
     zip_safe=False,
     install_requires=['setuptools'],
