@@ -10,7 +10,7 @@ class Link(SiteRelated, MetaData):
     """A link that can be added
     """
 
-    date_added = models.DateField(auto_now_add=True)
+    date_added = models.DateField()
     added_by = models.ForeignKey(auth_models.User)
 
     url = models.URLField(unique=True)

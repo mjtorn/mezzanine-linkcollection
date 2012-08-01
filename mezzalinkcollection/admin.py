@@ -8,7 +8,7 @@ class LinkAdmin(admin.ModelAdmin):
     """Custom admin
     """
 
-    fields = ('url', 'title', 'description', 'gen_description', 'added_by')
+    fields = ('date_added', 'url', 'title', 'description', 'gen_description', 'added_by')
 
     def get_form(self, request, obj=None, **kwargs):
         """We do not want to autogenerate the description here
