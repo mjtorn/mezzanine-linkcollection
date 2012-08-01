@@ -1,0 +1,11 @@
+{# use with links in context #}
+<table>
+    <tbody>
+        {% for link in links %}
+        <td>{{ link.date_added }}</td>
+        <td><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></td>
+        <td>{{ link.description }}</td>
+        {% endfor %}
+    </tbody>
+</table>
+
