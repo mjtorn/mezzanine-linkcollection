@@ -19,5 +19,8 @@ class Link(SiteRelated, MetaData):
     def __unicode__(self):
         return self.url
 
+    def get_absolute_url(self):
+        return self.url
+
 # EOF
 
