@@ -4,6 +4,8 @@ from django.contrib import admin
 
 from . import models
 
+import datetime
+
 class LinkAdmin(admin.ModelAdmin):
     """Custom admin
     """
@@ -16,9 +18,9 @@ class LinkAdmin(admin.ModelAdmin):
 
         form = super(LinkAdmin, self).get_form(request, obj=obj, **kwargs)
 
-        ## FIXME: does not seem to work, maybe we got instantiated? investigate later
-        form.base_fields['gen_description'].default = False
-        form.base_fields['added_by'].default = request.user
+        form.base_fields['date_added'].initial = datetime.datetime.now()
+        form.base_fields['gen_description'].initial = False
+        form.base_fields['added_by'].initial = request.user.id
 
         return form
 
