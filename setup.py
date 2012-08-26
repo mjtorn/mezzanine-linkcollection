@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 NAME = 'mezzanine-linkcollection'
-VERSION = '0.0.5'
+VERSION = '0.0.6'
 
 DESCR = """\
 A fairly basic model for maintaining a link list on your site
