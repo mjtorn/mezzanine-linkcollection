@@ -6,12 +6,20 @@ from . import models
 
 import datetime
 
+def mark_featured(modeladmin, request, queryset):
+    queryset.update(featured=True)
+
+def mark_not_featured(modeladmin, request, queryset):
+    queryset.update(featured=False)
+
+
 class LinkAdmin(admin.ModelAdmin):
     """Custom admin
     """
 
     fields = ('date_added', 'url', 'title', 'description', 'gen_description', 'added_by')
     list_display = ('title', 'date_added', 'featured', 'description', 'clickable_url')
+    actions = (mark_featured, mark_not_featured)
 
     def clickable_url(self, bob):
         """So we can link out
