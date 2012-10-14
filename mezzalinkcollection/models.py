@@ -6,6 +6,8 @@ from mezzanine.core.models import SiteRelated, MetaData
 
 from django.db import models
 
+from . import managers
+
 class Link(SiteRelated, MetaData):
     """A link that can be added
     """
@@ -17,6 +19,8 @@ class Link(SiteRelated, MetaData):
     title = models.CharField(max_length=255)
 
     featured = models.BooleanField(default=False, verbose_name='Featured?')
+
+    objects = managers.LinkManager()
 
     def __unicode__(self):
         return self.url
