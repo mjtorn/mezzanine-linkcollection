@@ -23,10 +23,6 @@ setup(
     url=URL,
     license='BSD',
     packages=find_packages(),
-    package_data = {
-        'mezzalinkcollection': ['templates/*']
-    },
-    include_package_data=True,
     zip_safe=False,
     install_requires=['setuptools'],
 )

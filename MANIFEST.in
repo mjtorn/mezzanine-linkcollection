@@ -1,0 +1,5 @@
+recursive-include mezzalinkcollection/templates *
+
+recursive-exclude mezzalinkcollection/templates *swp
+
+
