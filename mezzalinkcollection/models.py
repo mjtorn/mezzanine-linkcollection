@@ -16,6 +16,8 @@ class Link(SiteRelated, MetaData):
     url = models.URLField(unique=True)
     title = models.CharField(max_length=255)
 
+    featured = models.BooleanField(default=False, verbose_name='Featured?')
+
     def __unicode__(self):
         return self.url
 
