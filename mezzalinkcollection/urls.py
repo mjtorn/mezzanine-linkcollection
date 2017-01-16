@@ -1,13 +1,14 @@
 # vim: tabstop=4 expandtab autoindent shiftwidth=4 fileencoding=utf-8
 
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import include, url
+from mezzalinkcollection.views import links as links_view
 
 import rss
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^links/rss$', rss.LinkFeed()),
-    url(r'^links/$', 'mezzalinkcollection.views.links'),
-)
+    url(r'^links/$', links_view),
+]
 
 # EOF
 
