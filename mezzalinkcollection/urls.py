@@ -3,7 +3,7 @@
 from django.conf.urls import include, url
 from mezzalinkcollection.views import links as links_view
 
-import rss
+from . import rss
 
 urlpatterns = [
     url(r'^links/rss$', rss.LinkFeed()),
